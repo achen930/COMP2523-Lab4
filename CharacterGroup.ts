@@ -1,6 +1,9 @@
 import { ISortable } from "./ISortable";
 
 export class CharacterGroup implements ISortable {
+    constructor (data: string) {
+        this.data = data;
+    }
     data: string;
     get length(): number {
         return this.data.length;
@@ -18,10 +21,7 @@ export class CharacterGroup implements ISortable {
         this.data = stringArray.join("");
     };
     compare(leftPos: number, rightPos: number): boolean {
-        const lowerCaseStr = this.data.toLowerCase;
-        let leftChar = lowerCaseStr[leftPos];
-        let rightChar = lowerCaseStr[rightPos];
-
-        return leftChar > rightChar;
+        let data = this.data.split("");
+        return (data[leftPos].localeCompare(data[rightPos]) > 0);
     };
 }

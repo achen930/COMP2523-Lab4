@@ -1,6 +1,9 @@
 import { ISortable } from "./ISortable";
 
 export class NumberGroup implements ISortable {
+    constructor (data: number[]) {
+        this.data = data;
+    }
     data: number[];
     get length(): number {
         return this.data.length;
