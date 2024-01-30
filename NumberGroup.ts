@@ -13,8 +13,8 @@ export class NumberGroup implements ISortable {
         let rightNumber = this.data[rightPos];
 
         let temp = leftNumber;
-        leftNumber = rightNumber;
-        rightNumber = temp;
+        this.data[leftPos] = rightNumber;
+        this.data[rightPos] = temp;
     };
     compare(leftPos: number, rightPos: number): boolean {
         let leftNumber = this.data[leftPos];
