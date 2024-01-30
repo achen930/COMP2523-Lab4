@@ -15,10 +15,11 @@ export class CharacterGroup implements ISortable {
         let rightChar = stringArray[rightPos];
 
         let temp = leftChar;
-        leftChar = rightChar;
-        rightChar = temp;
+        stringArray[leftPos] = rightChar;
+        stringArray[rightPos] = temp;
 
         this.data = stringArray.join("");
+
     };
     compare(leftPos: number, rightPos: number): boolean {
         let data = this.data.split("");
